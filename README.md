@@ -20,9 +20,16 @@ AgentVCS is a semantic, agent-native version control system designed for autonom
 ## Installation
 
 ```bash
-pip install -e .
+git clone https://github.com/live-by-unix/agentvcs.git
 ```
+OR 
+Download latest release & unzip. 
+Then `cd` into your downloaded version of AgentVCS and run:
 
+```bash
+pip install -e . 
+```
+Switch pip for pip3 if you need to.
 ## Quick Start
 
 ```bash
