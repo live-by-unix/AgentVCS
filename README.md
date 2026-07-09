@@ -18,6 +18,7 @@ AgentVCS is a semantic, agent-native version control system designed for autonom
 - **Backup and restore** capabilities for data safety
 
 ## Installation
+**Do not worry about the index.html file, it is just there for the website**
 
 ```bash
 git clone https://github.com/live-by-unix/agentvcs.git
