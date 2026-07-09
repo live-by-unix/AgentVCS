@@ -1,4 +1,4 @@
 """AgentVCS - The world's first agentic version control system."""
 
-__version__ = "0.1.0"
-__author__ = "AgentVCS Team"
+__version__ = "1.0.0"
+__author__ = "live-by-unix"
