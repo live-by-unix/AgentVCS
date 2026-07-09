@@ -18,7 +18,6 @@ AgentVCS is a semantic, agent-native version control system designed for autonom
 - **Backup and restore** capabilities for data safety
 
 ## Installation
-**Do not worry about the index.html file, it is just there for the website**
 
 ```bash
 git clone https://github.com/live-by-unix/agentvcs.git
@@ -30,8 +29,8 @@ Then `cd` into your downloaded version of AgentVCS and run:
 ```bash
 pip install -e . 
 ```
-
 Switch pip for pip3 if you need to.
+
 ## Quick Start
 
 ```bash
