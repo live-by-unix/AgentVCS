@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgentVCS</title>
+    <!-- 1. Include the Marked.js library via CDN -->
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body>
+
+    <!-- 2. Create a container for the content -->
+    <div id="content">Loading content...</div>
+
+    <script>
+        // 3. Fetch and render README.md
+        fetch('https://agentvcs.pages.dev/README.md')
+            .then(response => response.text())
+            .then(markdownText => {
+                // Convert Markdown to HTML and inject it
+                document.getElementById('content').innerHTML = marked.parse(markdownText);
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML = "Error loading file.";
+                console.error(error);
+            });
+    </script>
+</body>
+</html>
