@@ -17,6 +17,13 @@ AgentVCS is a semantic, agent-native version control system designed for autonom
 - **Remote repository support** with Git-compatible push/pull operations
 - **Backup and restore** capabilities for data safety
 
+## Why AgentVCS
+AgentVCS, as the name suggested was made for agents.      
+There are many reasons to use AgentVCS for your agents.    
+One of them are the fact that with the normal Git VCS, the AI has to invesigate diffs, find intent, then work. With AgentVCS, the intent is already defined, so it uses less tokens.    
+Another use case is AgentVCS's risk levels, allowing for autonomous agents like Devin to analyze and see if the commit should be reversed.    
+
+
 ## Installation
 
 ```bash
