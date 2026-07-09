@@ -1,0 +1,2 @@
+[console_scripts]
+agentvcs = agentvcs.cli:main
