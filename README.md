@@ -564,5 +564,4 @@ Remote repository configuration:
 - [Event Streaming](docs/event-streaming.md) - Real-time event monitoring
 
 ## License
-
-MIT License - see LICENSE file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
