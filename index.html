@@ -23,7 +23,24 @@
                 return response.text();
             })
             .then(markdownText => {
-                document.getElementById('content').innerHTML = marked.parse(markdownText);
+                const html = marked.parse(markdownText);
+                const contentDiv = document.getElementById('content');
+                contentDiv.innerHTML = html;
+
+                // Rewrite links: if they point to .md, reload inside site
+                contentDiv.querySelectorAll('a').forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && href.endsWith('.md')) {
+                        link.addEventListener('click', e => {
+                            e.preventDefault();
+                            window.location.search = '?file=' + href;
+                        });
+                    } else {
+                        // External links open in new tab
+                        link.setAttribute('target', '_blank');
+                        link.setAttribute('rel', 'noopener noreferrer');
+                    }
+                });
             })
             .catch(error => {
                 document.getElementById('content').innerHTML = "Error loading file.";
