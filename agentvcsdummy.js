@@ -11,7 +11,7 @@ function runCommand(cmd, terminal) {
     switch (sub) {
       case "--version":
       case "-v":
-        terminal.textContent += "AgentVCS 0.9.0-browser-demo\n";
+        terminal.textContent += "AgentVCS 0.9.0-browser-demo (dummy)\n";
         break;
       case "commit":
         const intentIndex = parts.indexOf("--intent");
