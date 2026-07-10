@@ -1,7 +1,10 @@
 # AgentVCS
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg) ![Agent First](https://img.shields.io/badge/agents-first-purple.svg)
-
+![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Agents](https://img.shields.io/badge/agents-first-purple.svg)
+![GitHub Actions Status](https://github.com/live-by-unix/AgentVCS/actions/workflows/main.yml/badge.svg)
+![PyPI Version](https://img.shields.io/pypi/v/agentvcs.svg)
 
 The world's first agentic version control system — a git-like VCS (version control system) built for agents where humans are second priority and agents are first.
 
@@ -31,6 +34,21 @@ Another use case is AgentVCS's risk levels, allowing for autonomous agents like 
 
 
 ## Installation
+
+1. Using PIP install from PyPi index
+To install, run this
+```bash
+pip install agentvcs
+```
+Then run
+```bash
+agentvcs --version
+```
+If it outputs a number, hooray!
+
+2. Install from source code
+This is for advanced purposes only.
+Clone source code:
 
 ```bash
 git clone https://github.com/live-by-unix/agentvcs.git
