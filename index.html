@@ -2,48 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AgentVCS Browser Demo</title>
+  <title>AgentVCS – Agent‑Native Version Control</title>
   <style>
-    body { background: #111; color: #0f0; font-family: monospace; }
-    #terminal {
-      width: 80%;
-      height: 80vh;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #000;
-      border: 2px solid #0f0;
-      overflow-y: auto;
-      white-space: pre-wrap;
-    }
-    #input {
-      width: 100%;
-      border: none;
-      background: transparent;
-      color: #0f0;
-      font-family: monospace;
-      outline: none;
-    }
-    .cursor { animation: blink 1s infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+    body { margin:0; font-family:Arial, sans-serif; background:#111; color:#eee; }
+    section { padding:100px 20px; text-align:center; }
+    h1,h2 { color:#0f0; }
+    .hero { background:#000 url('hero-bg.jpg') center/cover no-repeat; color:#0f0; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+    .features { display:flex; flex-wrap:wrap; justify-content:center; }
+    .feature { flex:1 1 300px; margin:20px; padding:20px; background:#222; border:1px solid #0f0; border-radius:8px; }
+    .console { background:#000; color:#0f0; font-family:monospace; padding:20px; width:80%; margin:0 auto; text-align:left; border:2px solid #0f0; border-radius:8px; }
+    .cta { background:#0f0; color:#000; padding:50px; }
+    a.button { background:#000; color:#0f0; padding:15px 30px; text-decoration:none; border:2px solid #0f0; border-radius:5px; font-weight:bold; }
+    a.button:hover { background:#0f0; color:#000; }
   </style>
 </head>
 <body>
-  <div id="terminal">AgentVCS Browser Demo\nType a command...</div>
-  <input id="input" autofocus />
-  <script src="agentvcsdummy.js"></script>
-  <script src="nanodummy.js"></script>
-  <script>
-    const terminal = document.getElementById('terminal');
-    const input = document.getElementById('input');
 
-    input.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        const cmd = input.value.trim();
-        input.value = '';
-        terminal.textContent += `\n> ${cmd}\n`;
-        runCommand(cmd, terminal);
-      }
-    });
-  </script>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>AgentVCS</h1>
+    <p>The world’s first agent‑native version control system</p>
+    <a class="button" href="https://pypi.org/project/agentvcs/">Install Now</a>
+  </section>
+
+  <!-- Problem -->
+  <section>
+    <h2>Why Git Isn’t Enough</h2>
+    <p>Git was built for humans. Agents waste tokens parsing diffs and guessing intent.  
+    AgentVCS defines intent up front, saving compute and enabling autonomous workflows.</p>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Semantic Commits</h3>
+        <p>Every commit carries intent, risk level, and reasoning trace.</p>
+      </div>
+      <div class="feature">
+        <h3>Multi‑Agent Review Swarms</h3>
+        <p>Security, performance, and architecture agents collaborate automatically.</p>
+      </div>
+      <div class="feature">
+        <h3>Predictive Merge Engine</h3>
+        <p>Conflicts are simulated and resolved before they occur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser Console -->
+  <section>
+    <h2>Try It Now</h2>
+    <div class="console">
+      > agentvcs --version<br>
+      AgentVCS 0.9.0-browser-demo<br><br>
+      > agentvcs commit --intent "fix bug"<br>
+      Committed with intent=fix bug, risk=low<br><br>
+      > agentvcs merge feature-x<br>
+      Agents resolving conflicts… Get the full CLI to unlock this command!
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section>
+    <h2>Git vs AgentVCS</h2>
+    <p><strong>Git:</strong> Manual diffs, human‑first.<br>
+       <strong>AgentVCS:</strong> Intent‑aware, agent‑first, autonomous.</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Ready to Go Agent‑First?</h2>
+    <p>Install AgentVCS today and let agents handle your version control.</p>
+    <a class="button" href="https://github.com/live-by-unix/AgentVCS">View on GitHub</a>
+  </section>
+
 </body>
 </html>
