@@ -5,13 +5,16 @@
   <title>AgentVCS – Agent‑Native Version Control</title>
   <style>
     body { margin:0; font-family:Arial, sans-serif; background:#111; color:#eee; }
-    section { padding:100px 20px; text-align:center; }
-    h1,h2 { color:#0f0; }
+    section { padding:120px 40px; text-align:center; }
+    h1,h2,h3 { color:#0f0; }
+    p { max-width:800px; margin:20px auto; line-height:1.6; }
     .hero { background:#000 url('hero-bg.jpg') center/cover no-repeat; color:#0f0; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
     .features { display:flex; flex-wrap:wrap; justify-content:center; }
-    .feature { flex:1 1 300px; margin:20px; padding:20px; background:#222; border:1px solid #0f0; border-radius:8px; }
-    .console { background:#000; color:#0f0; font-family:monospace; padding:20px; width:80%; margin:0 auto; text-align:left; border:2px solid #0f0; border-radius:8px; }
-    .cta { background:#0f0; color:#000; padding:50px; }
+    .feature { flex:1 1 300px; margin:20px; padding:30px; background:#222; border:1px solid #0f0; border-radius:8px; }
+    .console { background:#000; color:#0f0; font-family:monospace; padding:20px; width:80%; margin:40px auto; text-align:left; border:2px solid #0f0; border-radius:8px; }
+    .comparison { display:flex; justify-content:center; gap:40px; }
+    .comparison div { flex:1; background:#222; padding:30px; border-radius:8px; }
+    .cta { background:#0f0; color:#000; padding:80px; }
     a.button { background:#000; color:#0f0; padding:15px 30px; text-decoration:none; border:2px solid #0f0; border-radius:5px; font-weight:bold; }
     a.button:hover { background:#0f0; color:#000; }
   </style>
@@ -30,11 +33,12 @@
     <h2>Why Git Isn’t Enough</h2>
     <p>Git was built for humans. Agents waste tokens parsing diffs and guessing intent.  
     AgentVCS defines intent up front, saving compute and enabling autonomous workflows.</p>
+    <p>With Git, every merge is a gamble. With AgentVCS, merges are predicted, simulated, and resolved before they happen.</p>
   </section>
 
   <!-- Features -->
   <section>
-    <h2>Features</h2>
+    <h2>Core Features</h2>
     <div class="features">
       <div class="feature">
         <h3>Semantic Commits</h3>
@@ -48,6 +52,42 @@
         <h3>Predictive Merge Engine</h3>
         <p>Conflicts are simulated and resolved before they occur.</p>
       </div>
+      <div class="feature">
+        <h3>Machine‑First Permissions</h3>
+        <p>Policies enforce agent autonomy with minimal human intervention.</p>
+      </div>
+      <div class="feature">
+        <h3>Continuous Risk Monitoring</h3>
+        <p>Sentinel agents watch for vulnerabilities and regressions in real time.</p>
+      </div>
+      <div class="feature">
+        <h3>Semantic Repository Graphs</h3>
+        <p>Visualize dependencies and impact analysis across your entire codebase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended Features -->
+  <section>
+    <h2>Extended Capabilities</h2>
+    <p>AgentVCS isn’t just a tool — it’s an ecosystem. Scroll further to see how deep it goes.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Event Streaming</h3>
+        <p>Real‑time awareness of commits, merges, and reviews.</p>
+      </div>
+      <div class="feature">
+        <h3>Backup & Restore</h3>
+        <p>Semantic metadata preserved alongside code for safe recovery.</p>
+      </div>
+      <div class="feature">
+        <h3>Hybrid Git Integration</h3>
+        <p>Push and pull seamlessly with Git remotes while keeping agent metadata intact.</p>
+      </div>
+      <div class="feature">
+        <h3>Custom Agent Plugins</h3>
+        <p>Extend AgentVCS with your own autonomous agents.</p>
+      </div>
     </div>
   </section>
 
@@ -57,18 +97,28 @@
     <div class="console">
       > agentvcs --version<br>
       AgentVCS 0.9.0-browser-demo<br><br>
-      > agentvcs commit --intent "fix bug"<br>
-      Committed with intent=fix bug, risk=low<br><br>
+      > agentvcs commit --intent "fix bug" --risk medium --reasoning "JWT skew"<br>
+      Committed with intent=fix bug, risk=medium, reasoning=JWT skew<br><br>
       > agentvcs merge feature-x<br>
-      Agents resolving conflicts… Get the full CLI to unlock this command!
+      Agents resolving conflicts… Get the full CLI to unlock this command!<br><br>
+      > agentvcs swarm --task "optimize queries"<br>
+      Agents negotiating… Full CLI required.
     </div>
   </section>
 
   <!-- Comparison -->
   <section>
     <h2>Git vs AgentVCS</h2>
-    <p><strong>Git:</strong> Manual diffs, human‑first.<br>
-       <strong>AgentVCS:</strong> Intent‑aware, agent‑first, autonomous.</p>
+    <div class="comparison">
+      <div>
+        <h3>Git</h3>
+        <p>Manual diffs<br>Human‑first<br>Conflict resolution after the fact</p>
+      </div>
+      <div>
+        <h3>AgentVCS</h3>
+        <p>Intent‑aware<br>Agent‑first<br>Predictive conflict resolution</p>
+      </div>
+    </div>
   </section>
 
   <!-- Call to Action -->
