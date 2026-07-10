@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AgentVCS Browser Demo</title>
+  <style>
+    body { background: #111; color: #0f0; font-family: monospace; }
+    #terminal {
+      width: 80%;
+      height: 80vh;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #000;
+      border: 2px solid #0f0;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+    #input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: #0f0;
+      font-family: monospace;
+      outline: none;
+    }
+    .cursor { animation: blink 1s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+  <div id="terminal">AgentVCS Browser Demo\nType a command...</div>
+  <input id="input" autofocus />
+  <script src="agentvcsdummy.js"></script>
+  <script src="nanodummy.js"></script>
+  <script>
+    const terminal = document.getElementById('terminal');
+    const input = document.getElementById('input');
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const cmd = input.value.trim();
+        input.value = '';
+        terminal.textContent += `\n> ${cmd}\n`;
+        runCommand(cmd, terminal);
+      }
+    });
+  </script>
+</body>
+</html>
