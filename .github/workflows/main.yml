@@ -1,11 +1,9 @@
-# This workflow will upload a Python Package to PyPI when a release is created
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
-
 name: Upload Python Package
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main   # runs on every commit pushed to main
 
 permissions:
   contents: read
@@ -51,7 +49,7 @@ jobs:
 
     environment:
       name: pypi
-      url: https://pypi.org/project/agentvcs/${{ github.event.release.name }}
+      url: https://pypi.org/project/agentvcs/
 
     steps:
       - name: Retrieve release distributions
