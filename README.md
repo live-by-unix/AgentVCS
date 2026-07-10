@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg) ![Agent First](https://img.shields.io/badge/agents-first-purple.svg)
 
 
-The world's first agentic version control system — a git-like VCS built for agents where humans are second priority and agents are first.
+The world's first agentic version control system — a git-like VCS (version control system) built for agents where humans are second priority and agents are first.
 
 <img width="1264" height="1264" alt="AgentVCS Robot Open Source Logo" src="https://github.com/user-attachments/assets/fc15622c-7194-4812-8628-a16a668f01e3" />
 
