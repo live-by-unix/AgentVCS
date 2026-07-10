@@ -2,6 +2,9 @@
 
 The world's first agentic version control system — a git-like VCS built for agents where humans are second priority and agents are first.
 
+<img width="1264" height="1264" alt="AgentVCS Robot Open Source Logo" src="https://github.com/user-attachments/assets/fc15622c-7194-4812-8628-a16a668f01e3" />
+
+
 ## Overview
 
 AgentVCS is a semantic, agent-native version control system designed for autonomous AI workflows. Unlike traditional VCS tools built for human collaboration, AgentVCS prioritizes agent autonomy with:
