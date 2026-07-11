@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentvcs"
-version = "1.6.1"
+version = "1.6.1.1"
 description = "The world's first agentic version control system"
 readme = "README.md"
 requires-python = ">=3.9"
