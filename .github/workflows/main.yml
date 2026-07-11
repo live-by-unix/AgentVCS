@@ -22,32 +22,26 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install build twine
 
+      - name: Bump version to 1.0.0.0
+        run: |
+          sed -i 's/^version = .*/version = "1.0.0.0"/' pyproject.toml
+
       - name: Build release distributions
         run: |
           python -m build
 
-      - name: Rename distributions to avoid filename reuse
+      - name: Check distributions
         run: |
-          mkdir renamed
-          for f in dist/*; do
-            base=$(basename "$f")
-            # Append a build tag (e.g., +reupload) to filenames
-            mv "$f" "renamed/${base/.whl/+reupload.whl}"
-            mv "renamed/${base/.whl/+reupload.whl}" "renamed/${base/.tar.gz/+reupload.tar.gz}" || true
-          done
+          twine check dist/*
 
-      - name: Check renamed distributions
-        run: |
-          twine check renamed/*
-
-      - name: Upload renamed distributions
+      - name: Upload distributions
         uses: actions/upload-artifact@v4
         with:
           name: release-dists
-          path: renamed/
+          path: dist/
 
       - name: Confirm workflow run
-        run: echo "✅ Build completed and artifacts renamed + uploaded"
+        run: echo "✅ Build completed and artifacts uploaded"
 
   pypi-publish:
     runs-on: ubuntu-latest
@@ -66,7 +60,7 @@ jobs:
           name: release-dists
           path: dist/
 
-      - name: Publish renamed distributions to PyPI
+      - name: Publish release distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
