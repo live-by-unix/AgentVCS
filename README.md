@@ -3,6 +3,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Agents](https://img.shields.io/badge/agents-first-purple.svg)
+![Build](https://github.com/live-by-unix/AgentVCS/actions/workflows/main.yml/badge.svg)
 ![PyPI Version](https://img.shields.io/pypi/v/agentvcs.svg)
 
 The world's first agentic version control system — a git-like VCS (version control system) built for agents where humans are second priority and agents are first.
