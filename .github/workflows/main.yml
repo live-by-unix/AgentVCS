@@ -1,9 +1,7 @@
-name: Upload Python Package
+name: Upload Python Package v2.0
 
 on:
-  push:
-    branches:
-      - main   # runs on every commit pushed to main
+  workflow_dispatch:   # ✅ Manual trigger only
 
 permissions:
   contents: read
