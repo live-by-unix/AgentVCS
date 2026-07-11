@@ -22,10 +22,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install build twine
 
-      - name: Bump version to 1.0.0.0
-        run: |
-          sed -i 's/^version = .*/version = "1.0.0.0"/' pyproject.toml
-
       - name: Build release distributions
         run: |
           python -m build
