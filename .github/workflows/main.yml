@@ -1,4 +1,4 @@
-name: Upload Python Package v2.0
+name: Upload Python Package
 
 on:
   workflow_dispatch:   # ✅ Manual trigger only
@@ -26,18 +26,28 @@ jobs:
         run: |
           python -m build
 
-      - name: Check distributions
+      - name: Rename distributions to avoid filename reuse
         run: |
-          twine check dist/*
+          mkdir renamed
+          for f in dist/*; do
+            base=$(basename "$f")
+            # Append a build tag (e.g., +reupload) to filenames
+            mv "$f" "renamed/${base/.whl/+reupload.whl}"
+            mv "renamed/${base/.whl/+reupload.whl}" "renamed/${base/.tar.gz/+reupload.tar.gz}" || true
+          done
 
-      - name: Upload distributions
+      - name: Check renamed distributions
+        run: |
+          twine check renamed/*
+
+      - name: Upload renamed distributions
         uses: actions/upload-artifact@v4
         with:
           name: release-dists
-          path: dist/
+          path: renamed/
 
       - name: Confirm workflow run
-        run: echo "✅ Build completed and artifacts uploaded"
+        run: echo "✅ Build completed and artifacts renamed + uploaded"
 
   pypi-publish:
     runs-on: ubuntu-latest
@@ -56,7 +66,7 @@ jobs:
           name: release-dists
           path: dist/
 
-      - name: Publish release distributions to PyPI
+      - name: Publish renamed distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
