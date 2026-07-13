@@ -32,6 +32,10 @@ There are many reasons to use AgentVCS for your agents.
 One of them are the fact that with the normal Git VCS, the AI has to invesigate diffs, find intent, then work. With AgentVCS, the intent is already defined, so it uses less tokens.    
 Another use case is AgentVCS's risk levels, allowing for autonomous agents like Devin to analyze and see if the commit should be reversed.    
 
+## Requirements
+* Python 3.9 (3.11 to 3.13 if you can)
+* PIP
+
 
 ## Installation
 
