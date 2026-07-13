@@ -33,7 +33,7 @@ One of them are the fact that with the normal Git VCS, the AI has to invesigate 
 Another use case is AgentVCS's risk levels, allowing for autonomous agents like Devin to analyze and see if the commit should be reversed.    
 
 ## Requirements
-* Python 3.9 (3.11 to 3.13 if you can)
+* Python 3.9 or higher
 * PIP
 
 
